@@ -1,0 +1,26 @@
+[project]
+name = "radar-embeddings"
+version = "0.1.0"
+description = "Convert Doppler radar images into embeddings for generative models"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "ObrienlabsDev"}]
+
+dependencies = [
+  "numpy>=1.24",
+  "pillow>=10.0",
+  "torch>=2.2",
+  "torchvision>=0.17",
+  "tqdm>=4.66",
+]
+
+[project.scripts]
+radar-embed = "radar_embeddings.cli:main"
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
