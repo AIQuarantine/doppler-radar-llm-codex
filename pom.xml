@@ -2,7 +2,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.obrienlabs</groupId>
+  <groupId>dev.obrienlabs</groupId>
   <artifactId>radar-embeddings</artifactId>
   <version>0.1.0</version>
   <name>radar-embeddings</name>
@@ -63,7 +63,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>com.obrienlabs.radar.RadarEmbed</mainClass>
+              <mainClass>dev.obrienlabs.codex.radar.RadarEmbed</mainClass>
             </manifest>
           </archive>
         </configuration>
@@ -82,7 +82,7 @@
               <createDependencyReducedPom>false</createDependencyReducedPom>
               <transformers>
                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                  <mainClass>com.obrienlabs.radar.RadarEmbed</mainClass>
+                  <mainClass>dev.obrienlabs.codex.radar.RadarEmbed</mainClass>
                 </transformer>
               </transformers>
             </configuration>
