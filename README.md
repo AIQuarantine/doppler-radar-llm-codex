@@ -5,16 +5,20 @@ fed into a generative model pipeline.
 
 ## Setup
 
+This project now targets **Java 21** and uses the [Deep Java Library (DJL)](https://djl.ai/) to
+run a ResNet-50 backbone for image embeddings.
+
 ```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -e .
+mvn -q -DskipTests package
 ```
 
 ## Embed radar imagery
 
 ```bash
-radar-embed path/to/radar/images --output embeddings.npy --batch-size 32 --device cpu
+java -jar target/radar-embeddings-0.1.0-shaded.jar path/to/radar/images \
+  --output embeddings.npy \
+  --batch-size 32 \
+  --device cpu
 ```
 
 The command saves:
@@ -24,4 +28,5 @@ The command saves:
 ## Notes
 
 - Supported extensions: PNG, JPEG, TIFF.
-- To use a GPU, pass `--device cuda` and ensure CUDA-enabled PyTorch is installed.
+- DJL will download model artifacts on first run.
+- To use a GPU, pass `--device cuda` and ensure the appropriate CUDA-enabled PyTorch engine is available.
